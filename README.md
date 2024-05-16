@@ -34,11 +34,11 @@ Un proyecto realizado para la materia de _Bases de Datos_.
 
 
 ### Descripción de los datos
-Este conjunto de datos proporciona información sobre personas involucradas en accidentes de tráfico en Chicago.
-Cada tupla representa a un individuo relacionado a un accidente.
-Abarca peatones, ciclistas, pasajeros, conductores o cualquier involucrado con un elemento automovilistico.
-Los registros son elaborados por la policía de Chigado y actualizados cada 30 días.
-Los datos se encuentran en [este link](https://data.cityofchicago.org/Transportation/Traffic-Crashes-People/u6pd-qa9d/about_data).
+* Este conjunto de datos proporciona información sobre personas involucradas en accidentes de tráfico en Chicago.
+* Cada tupla representa a un individuo relacionado a un accidente.
+* Abarca peatones, ciclistas, pasajeros, conductores o cualquier involucrado con un elemento automovilistico.
+* Los registros son elaborados por la policía de Chigado y actualizados cada 30 días.
+* Los datos se encuentran en [este link](https://data.cityofchicago.org/Transportation/Traffic-Crashes-People/u6pd-qa9d/about_data).
 
 
 **Información general de la base de datos:** 
@@ -58,7 +58,7 @@ Las siguientes son algunas de las variables disponibles en el conjunto de datos:
 
 ### Objetivo del estudio
 
-Con este proyecto, buscamos obtener tendencias de comportamiento humano y entender a mayor profundidad que nuestras acciones nos afectan a nosotros y a terceros.
+   Con este proyecto, buscamos obtener tendencias de comportamiento humano y entender a mayor profundidad que nuestras acciones nos afectan a nosotros y a terceros.
 
 
 
@@ -66,7 +66,7 @@ Con este proyecto, buscamos obtener tendencias de comportamiento humano y entend
 
 ### Carga inicial de datos
 
-Para insertar los datos en bruto se debe primero correr el script `raw_data_schema_creation.sql` y posteriormente ejecutar el siguiente comando en una sesión de línea de comandos de Postgres.
+   Para insertar los datos en bruto se debe primero correr el script `raw_data_schema_creation.sql` y posteriormente ejecutar el siguiente comando en una sesión de línea de comandos de Postgres.
 
 ```
 \copy raw.crashes_people (person_id, person_type, crash_record_id, vehicle_id, crash_date, seat_no, city, state, zipcode, sex, age, drivers_license_state, drivers_license_class, safety_equipment, airbag_deployed, ejection, injury_classification, hospital, ems_agency, ems_run_no, driver_action, driver_vision, physical_condition, pedpedal_action, pedpedal_visibility, pedpedal_location, bac_result, bac_result_value,cell_phone_use) 
@@ -77,13 +77,13 @@ WITH (FORMAT CSV, HEADER true, DELIMITER ',');
 
 ### Análisis preliminar de los datos
 
-Para el análisi preeliminar de los datos, corrimos el codigo que está en el script `raw_data_schema_creation.sql`. Aquí nos percatamos de distintas problemas que habría en la limpia de datos, como edades negativas, errores ortográficos o de dedo en las columnas de ciudad y hospital. Adicionalmente, hay ciertas columnas que nos proporcionan información valiosa y serán cortadas más adelante. También, en los últimos atributos, se ve que hay únicamente pocas opciones distintas, lo cual aluden al uso de mejores técnicas para la recolleción de datos.
+   Para el análisis preliminar de los datos, corrimos el codigo que está en el script `raw_data_schema_creation.sql`. Aquí nos percatamos de distintas problemas que habría en la limpia de datos, como edades negativas, errores ortográficos o de dedo en las columnas de ciudad y hospital. Adicionalmente, hay ciertas columnas que nos proporcionan información valiosa y serán cortadas más adelante. También, en los últimos atributos, se ve que hay únicamente pocas opciones distintas, lo cual aluden al uso de mejores técnicas para la recolleción de datos.
 
 
 
 ## Limpieza de datos
 
-El proceso de limpieza sigue una metodología de refresh destructiuvo, por lo que cada vez que se corra se generará desde cero el esquema y las tablas correspondientes. El script correspondiente es el llamado: data_cleaning.sql.
+   El proceso de limpieza sigue una metodología de refresh destructiuvo, por lo que cada vez que se corra se generará desde cero el esquema y las tablas correspondientes. El script correspondiente es el llamado: data_cleaning.sql.
 
 **Las columnas eliminadas fueron:**
 * ejection
@@ -91,7 +91,7 @@ El proceso de limpieza sigue una metodología de refresh destructiuvo, por lo qu
 * drivers_license_class
 * ems_run_no
 * pedpedal_location
- 
+
 Adicionalmente, se usó el TRIMM(UPPER(x)) a la hora de insertar los datos para evitar problemas con espacios al final y con las minúsulas. 
 
 **Limpieza de las columnas:**
@@ -113,27 +113,28 @@ A demás de esto, se quitó los NULLs de la mayoría de las columnas, excepto do
 
 ## Normalización de datos hasta cuarta formal normal
 
-Es el proceso mediante el cual se busca llevar a las relvars de una base de datos a formas (estructuras) normales. Esto es para arreglar fallas lógicas, reducir la redundancia en diseños sin fallas de lógica en otros sentidos y eliminan las anomalías de inserción, borrado y modificación. Este código se encuentra en el script 'data_normalization.sql'.
+   Es el proceso mediante el cual se busca llevar a las relvars de una base de datos a formas (estructuras) normales. Esto es para arreglar fallas lógicas, reducir la redundancia en diseños sin fallas de lógica en otros sentidos y eliminan las anomalías de inserción, borrado y modificación. Este código se encuentra en el script 'data_normalization.sql'.
 
 ### 1NF
 
-Los datos desde un inicio ya estaban en la primera forma normal pues para cada tupla, solo había un valor. No había necesidad de descomponer.
+   Los datos desde un inicio ya estaban en la primera forma normal pues para cada tupla, solo había un valor. No había necesidad de descomponer.
 
 ### 2NF
 
-Los datos también ya estban en segunda forma normal pues {person_id} es la única llave de la relvar y la única dependencia funcional de esta es _{person_id} –> E_. Es decir, para todas las dependencias funcionales que salen de llaves son irreducibles.
+   Los datos también ya estban en segunda forma normal pues {person_id} es la única llave de la relvar y la única dependencia funcional de esta es _{person_id} –> E_. Es decir, para todas las dependencias funcionales que salen de llaves son irreducibles.
 
 ### 3NF
 
-Los datos también ya estaban en tercera forma normal pues todas las dependencias funcionales de la relvar salen de una superllave.
+   Los datos también ya estaban en tercera forma normal pues todas las dependencias funcionales de la relvar salen de una superllave.
 
 ### BCNF
 
-_Las únicas FD que se mantienen en una relvar en BCNF son triviales o bien son “flechas que salen de súper llaves"_. Esto se cumple en esta relvar, pues al igual que en la 3NF, la dependencia funcional sale de una superllave.
+   _Las únicas FD que se mantienen en una relvar en BCNF son triviales o bien son “flechas que salen de súper llaves"_. Esto se cumple en esta relvar, pues al igual que en la 3NF, la dependencia funcional sale de una superllave.
 
 ### 4NF
 
-Aquí se presentan algunas dependencias multivaluadas. Para hacer que todas las dependencias multivaluados no triviales estén implicadas por llaves y que hiciera sentido, descompusimos la tabla en 5 tablas:
+   Aquí se presentan algunas dependencias multivaluadas. Para hacer que todas las dependencias multivaluados no triviales estén implicadas por llaves y que hiciera sentido, descompusimos la tabla en 5 tablas:
+   
 * **id**
    * Contiene únicamente la llave principal. Esto se hizo para que en las otras tablas se pudiera poner _person_id_ como llave foránea y se pudieran hacer JOINS con esa llave.
 * **person**
@@ -149,7 +150,7 @@ Aquí se presentan algunas dependencias multivaluadas. Para hacer que todas las 
 
 ## Análisis de datos a través de consultas SQL
 
-Ya teniendo los datos normalizados, podemos hacer consultas para sacar resultados interesantes. En este proyecto se hicieron cinco consultas que revelan información importante. Este código se puede encontrar en el script 'data_analysis.sql'.
+   Ya teniendo los datos normalizados, podemos hacer consultas para sacar resultados interesantes. En este proyecto se hicieron cinco consultas que revelan información importante. Este código se puede encontrar en el script 'data_analysis.sql'.
 
 **1. Top 10 de ciudades de residencia con mayor número de accidentes en Chicago (excluyendo a Chicago, _desconocidos_ y _otros_).**
    - Esto nos dio una lista de las 10 ciudades que tienen la mayor cantidad de gente relacionadas a accidentes dentro de Chicago. Lo curioso, pero no sorprendente, fue cuando los pusimos en el mapa, se podía ver una relación de entre más cerca estuviera de Chicago, más accidentes iba a tener. Esto tiene sentido pues si una ciudad está cerca de Chicago, es más probable que sus residentes se vayan a Chicago para trabajar, creando la oportunidad de tener accidentes dentro de esta ciudad.
@@ -170,7 +171,7 @@ Ya teniendo los datos normalizados, podemos hacer consultas para sacar resultado
 
 ## Creación de atributos para entrenamiento de modelos
 
-Con este set de datos podemos crear algunos atributos extras para se puedan usar en el entrenamiento de modelos. Nos enfocamos un poco en cosas que pueden usar las aseguradoras para calcular primas de seguros automovilísticos o de gastos médicos. Todos estos códigos están en el script 'data_model_training.sql'.
+   Con este set de datos podemos crear algunos atributos extras para se puedan usar en el entrenamiento de modelos. Nos enfocamos un poco en cosas que pueden usar las aseguradoras para calcular primas de seguros automovilísticos o de gastos médicos. Todos estos códigos están en el script 'data_model_training.sql'.
 
 1. **Grupos de edad:** Hace lo que hicimos en la última consulta pero lo convierte en atributo. Esto le importa más a las aseguradoras que la edad exacta.
 2. **Estación:** Determina la estación del momento del accidente a partir de la fecha de este. Si hay una estación con mayor número de accidentes (puede ser por clima, estado de ánimo de los conductores, etc.), entonces la aseguradora puede preparar una mayor reserva para cuando llegue esa estación del año.
@@ -183,8 +184,8 @@ Con este set de datos podemos crear algunos atributos extras para se puedan usar
 
 ## Conclusiones
 
-A través de nuestras consultas y el análisis de datos cumplimos con el objetivo de nuestro proyecto. Queríamos ver tendencias del comportamiento humano. Detectamos que los hombres son más probables a consumir drogas y/o alcohol y a tener accidentes de tráfico que las mujeres. También vimos que las personas con mayor edad son menos probable a tener accidentes por el uso del celular. Adicionalmente, queríamos entender a mayor profundidad que nuestras acciones nos afectan a nosotros y a terceros, es decir cómo manejar bajo la influencia de sustancias, usar el celular o no utilizar el cinturón de seguridad pueden afectar nuestra salud y hasta la salud de otras personas, pues podemos ser nosotros quienes causemos los accidentes. Agregando a esto, vimos la importancia de tener un sistema eficiente de servicios médicos de emergencia para reducir la gravedad de los accidentes de tráfico y por ende mejorar la calidad de vida de los ciudadanos (y las personas que no residen ahí pero visitan seguido esa ciudad).
+   A través de nuestras consultas y el análisis de datos cumplimos con el objetivo de nuestro proyecto. Queríamos ver tendencias del comportamiento humano. Detectamos que los hombres son más probables a consumir drogas y/o alcohol y a tener accidentes de tráfico que las mujeres. También vimos que las personas con mayor edad son menos probable a tener accidentes por el uso del celular. Adicionalmente, queríamos entender a mayor profundidad que nuestras acciones nos afectan a nosotros y a terceros, es decir cómo manejar bajo la influencia de sustancias, usar el celular o no utilizar el cinturón de seguridad pueden afectar nuestra salud y hasta la salud de otras personas, pues podemos ser nosotros quienes causemos los accidentes. Agregando a esto, vimos la importancia de tener un sistema eficiente de servicios médicos de emergencia para reducir la gravedad de los accidentes de tráfico y por ende mejorar la calidad de vida de los ciudadanos (y las personas que no residen ahí pero visitan seguido esa ciudad).
 
-Al mismo tiempo, nos dimos cuenta de la importancia del registro de datos. Para mejorar la calidad de los análisis de datos, hay que llevar un mejor registro de los datos pues pueden ocurrir varios errores en la limpieza de datos al intentar corregir errores eficientemente. Errores que pueden llevar a un análisis incorrecto de los mismos datos.
+   Al mismo tiempo, nos dimos cuenta de la importancia del registro de datos. Para mejorar la calidad de los análisis de datos, hay que llevar un mejor registro de los datos pues pueden ocurrir varios errores en la limpieza de datos al intentar corregir errores eficientemente. Errores que pueden llevar a un análisis incorrecto de los mismos datos.
 
-Finalmente, algo aún más importante que reflexionamos gracias al análisis esta base de datos es que no puedes quedarte en el análisis de los datos. Debes recordar que atrás de estos datos hay personas. Vidas que se perdieron, familias que fueron afectadas, tragedias que ocurrieron. Tenemos que tener una visión ética y simpática cada vez que trabajemos con una base de datos similar y ver cómo el análisis que le demos puede afectar a muchas personas.
+   Finalmente, algo aún más importante que reflexionamos gracias al análisis esta base de datos es que no puedes quedarte en el análisis de los datos. Debes recordar que atrás de estos datos hay personas. Vidas que se perdieron, familias que fueron afectadas, tragedias que ocurrieron. Tenemos que tener una visión ética y simpática cada vez que trabajemos con una base de datos similar y ver cómo el análisis que le demos puede afectar a muchas personas.
