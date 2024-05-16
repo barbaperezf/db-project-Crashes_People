@@ -170,7 +170,14 @@ Ya teniendo los datos normalizados, podemos hacer consultas para sacar resultado
 
 ## Creación de atributos para entrenamiento de modelos
 
+Con este set de datos podemos crear algunos atributos extras para se puedan usar en el entrenamiento de modelos. Nos enfocamos un poco en cosas que pueden usar las aseguradoras para calcular primas de seguros automovilísticos o de gastos médicos. Todos estos códigos están en el script 'data_model_training.sql'.
 
+1. **Grupos de edad:** Hace lo que hicimos en la última consulta pero lo convierte en atributo. Esto le importa más a las aseguradoras que la edad exacta.
+2. **Estación:** Determina la estación del momento del accidente a partir de la fecha de este. Si hay una estación con mayor número de accidentes (puede ser por clima, estado de ánimo de los conductores, etc.), entonces la aseguradora puede preparar una mayor reserva para cuando llegue esa estación del año.
+3. **Severidad de la lesión:** Categoriza _injury_classification_ en una escala de severidad. Eso sirve para ponerle números a la severidad de los accidentes, muy útil para el cálculo actuarial.
+4. **Número de vehículos en el accidente:** Agrupa _vehicle_id_ para contar el número de vehículos involucrados en cada accidente.
+5. **Tiempo desde el accidente:** Calcula el número de días desde el accidente usando la fecha actual y la fecha del accidente. Esto puede ser usado para calcular la probabilidad de que haya un reclamo (se sabe que si ya pasó mucho tiempo desde el accidente, la probabilidad de que haya un reclamo baja mucho).
+6. **Probabilidad de hospitalización:** Indique la probabilidad de hospitalización dependiendo en la severidad del accidente. Esto se puede usar si una compañía de seguros cubre seguros accidentes o de coches y gastos médicos. Si sabe que le chocaron y el accidente fue de severidad X, cuál es la probabilidad de que vaya al hospital y tenga que pagar ese gasto también.
 
 
 
