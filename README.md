@@ -70,9 +70,11 @@ WITH (FORMAT CSV, HEADER true, DELIMITER ',');
 
 ### Análisis preliminar de los datos
 
-Para el análisi preeliminar de los datos, corrimos el codigo que está en el script `raw_data_schema_creation.sql`. Aquí nos percatamos de distintas
+Para el análisi preeliminar de los datos, corrimos el codigo que está en el script `raw_data_schema_creation.sql`. Aquí nos percatamos de distintas problemas que habría en la limpia de datos, como edades negativas, errores ortográficos o de dedo en las columnas de ciudad y hospital. Adicionalmente, hay ciertas columnas que nos proporcionan información valiosa y serán cortadas más adelante. También, en los últimos atributos, se ve que hay únicamente pocas opciones distintas, lo cual aluden al uso de mejores técnicas para la recolleción de datos.
 
 ## Limpieza de datos
+
+El proceso de limpieza sigue una metodología de refresh destructiuvo, por lo que cada vez que se corra se generará desde cero el esquema y las tablas correspondientes. El script correspondiente es el llamado: data_cleaning.sql.
 
 
 ## Normalización de datos hasta cuarta formal normal
