@@ -522,8 +522,8 @@ UPDATE cleaning.crashes_people
 SET airbag_deployed = 
 	CASE
 		WHEN airbag_deployed = 'DEPLOYED OTHER (KNEE, AIR, BELT, ETC.)' THEN 'DEPLOYED, OTHER (KNEE, AIR, BELT, ETC.)'
-		WHEN person_type = 'BICYCLE' OR person_type = 'PEDESTRIAN' OR person_type = 'NON-CONTACT VEHICLE' OR person_type = 'NON-MOTOR VEHICLE' THEN 'NOT APPLICABLE'
-		WHEN person_type = 'PASSENGER' OR person_type = 'DRIVER' THEN 'DEPLOYMENT UNKNOWN'
+		WHEN airbag_deployed IS NULL AND (person_type = 'BICYCLE' OR person_type = 'PEDESTRIAN' OR person_type = 'NON-CONTACT VEHICLE' OR person_type = 'NON-MOTOR VEHICLE') THEN 'NOT APPLICABLE'
+		WHEN airbag_deployed IS NULL AND  (person_type = 'PASSENGER' OR person_type = 'DRIVER') THEN 'DEPLOYMENT UNKNOWN'
 		ELSE airbag_deployed
 	END;
 
