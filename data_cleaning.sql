@@ -6,7 +6,7 @@
 DROP SCHEMA IF EXISTS cleaning CASCADE;
 CREATE SCHEMA cleaning;
 
--- Creating a copy of the cleaning table changing some types and excluding the drivers_license_state, the ems_run_no, ejection, drivers_license_class, pedpedal_location columns
+-- Creating a copy of the cleaning table changing some types and excluding the drivers_license_state, ems_run_no, ejection, drivers_license_class and pedpedal_location columns
 DROP TABLE IF EXISTS cleaning.crashes_people;
 CREATE TABLE cleaning.crashes_people (
     person_id text NOT NULL,
