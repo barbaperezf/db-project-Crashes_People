@@ -482,7 +482,7 @@ SET person_type = 'DRIVER'
 WHERE person_type = 'PASSENGER' AND seat_no ='1';
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++ */
--- Cleaning crash_date, crash_record_id and vehicle_id
+-- Cleaning vehicle_id
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
 UPDATE cleaning.crashes_people
