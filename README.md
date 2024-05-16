@@ -113,7 +113,7 @@ A demás de esto, se quitó los NULLs de la mayoría de las columnas, excepto do
 
 ## Normalización de datos hasta cuarta formal normal
 
-Es el proceso mediante el cual se busca llevar a las relvars de una base de datos a formas (estructuras) normales. Esto es para arreglar fallas lógicas, reducir la redundancia en diseños sin fallas de lógica en otros sentidos y eliminan las anomalías de inserción, borrado y modificación.
+Es el proceso mediante el cual se busca llevar a las relvars de una base de datos a formas (estructuras) normales. Esto es para arreglar fallas lógicas, reducir la redundancia en diseños sin fallas de lógica en otros sentidos y eliminan las anomalías de inserción, borrado y modificación. Este código se encuentra en el script 'data_normalization.sql'.
 
 ### 1NF
 
@@ -121,7 +121,7 @@ Los datos desde un inicio ya estaban en la primera forma normal pues para cada t
 
 ### 2NF
 
-Los datos también ya estban en segunda forma normal pues {person_id} es la única llave de la relvar y la única dependencia funcional de esta es '{person_id} –> E'. Es decir, para todas las dependencias funcionales que salen de llaves son irreducibles.
+Los datos también ya estban en segunda forma normal pues {person_id} es la única llave de la relvar y la única dependencia funcional de esta es _{person_id} –> E_. Es decir, para todas las dependencias funcionales que salen de llaves son irreducibles.
 
 ### 3NF
 
@@ -149,7 +149,21 @@ Aquí se presentan algunas dependencias multivaluadas. Para hacer que todas las 
 
 ## Análisis de datos a través de consultas SQL
 
-x
+Ya teniendo los datos normalizados, podemos hacer consultas para sacar resultados interesantes. En este proyecto se hicieron cinco consultas que revelan información importante. Este código se puede encontrar en el script 'data_analysis.sql'.
+**1. Top 10 de ciudades de residencia con mayor número de accidentes en Chicago (excluyendo a Chicago, _desconocidos_ y _otros_).**
+      - x
+   
+**2. Accidentes fatales o de lesión incapacitante usando cinturón de seguridad v.s. no utilizándolo.**
+      - x
+      
+**3. Comparación del personas accidentadas bajo la influencia de alcohol y/o drogas dividido por género.**
+      - x
+      
+**4. La importancia de las ambulancias: relación entre los accidentes fatales si llegó o no una ambulancia.**
+      - x
+      
+**5. Edad y el uso del celular manejando.**
+      - x
 
 
 
