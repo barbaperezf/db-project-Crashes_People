@@ -6,9 +6,9 @@ Un proyecto realizado para la materia de _Bases de Datos_.
 
 
 1. [Proyecto](#proyecto)
-      i. [Integrantes del equipo](#integrantes-del-equipo)
-      ii. [Descripción de los datos](#descripción-de-los-datos)
-      iii. [Problema a estudiar](#problema-a-estudiar)
+   i. [Integrantes del equipo](#integrantes-del-equipo)
+   ii. [Descripción de los datos](#descripción-de-los-datos)
+   iii. [Problema a estudiar](#problema-a-estudiar)
 3. [Carga inicial y análisis preliminar](#carga-inicial-y-análisis-preliminar)
       i. [Carga inicia de datos](#carga-inicial-de-datos)
       ii. [Análisis preliminar de los datos](#análisis-preliminar-de-los-datos)
