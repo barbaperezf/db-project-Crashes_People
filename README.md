@@ -1,1 +1,1 @@
-# db-project-Crashes_People
+# Proyecto BD: Las personas en Chicago y sus accidentes
