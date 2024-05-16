@@ -76,6 +76,12 @@ Para el análisi preeliminar de los datos, corrimos el codigo que está en el sc
 
 El proceso de limpieza sigue una metodología de refresh destructiuvo, por lo que cada vez que se corra se generará desde cero el esquema y las tablas correspondientes. El script correspondiente es el llamado: data_cleaning.sql.
 
+Las columnas eliminadas fueron:
+* ejection
+* drivers_license_state
+* drivers_license_class
+* ems_run_no
+* pedpedal_location
 
 ## Normalización de datos hasta cuarta formal normal
 
