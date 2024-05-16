@@ -164,7 +164,7 @@ Ya teniendo los datos normalizados, podemos hacer consultas para sacar resultado
    - Para esta pregunta se realizaron cuatro consultas. Primero: cantidad de accidentes fatales en los cuales sí llegó una ambulancia; segundo: cantidad de accidentes fatales en los cuales no llegó una ambulancia; tercero: cantidad de accidentes donde hubo lesiones no fatales y sí llego la ambulancia; y cuarto: cantidad de accidentes donde hubo lesiones no fatales y no llegó la ambulancia. Los resultados fueron 225, 773, 20,731 y 84,932 respectivamente. Esto nos muestra que cuando llega la ambulancia a la escena del accidente, no solo hay menor cantidad de fatalidades, sino también menor cantidad de accidentes graves. La salud de las personas depende de un sistema de servicios médicos de emergencia de calidad, esto es importante para cualquier ciudad del mundo.
       
 **5. Edad y el uso del celular manejando.**
-   - 
+   - Aquí se dividió a la población en cuatro grupos de edades: menores de treinta, treintones y cuarentones, cincuentones y sesentones, y mayores de setenta. Después se calculó el porcentaje de accidentes de tráfico en el cual se detectó que se usó el celular (contra los que se sabe que no se usó el celular) por cada grupo. Los resultados siguen la lógica que entre menor sea la persona, más probable es que esté usando el celular y por ende más probable es que tenga un accidente de tráfico por esto.
 
 
 
