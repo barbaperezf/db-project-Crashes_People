@@ -7,7 +7,7 @@ Un proyecto realizado para la materia de _Bases de Datos_.
 1. [Proyecto](#proyecto)
    i. [Integrantes del equipo](#integrantes-del-equipo)
    ii. [Descripción de los datos](#descripción-de-los-datos)
-   iii. [Problema a estudiar](#problema-a-estudiar)
+   iii. [Objetivo del estudio](#objetivo-del-estudio)
 3. [Carga inicial y análisis preliminar](#carga-inicial-y-análisis-preliminar)
       i. [Carga inicia de datos](#carga-inicial-de-datos)
       ii. [Análisis preliminar de los datos](#análisis-preliminar-de-los-datos)
@@ -56,7 +56,7 @@ Las siguientes son algunas de las variables disponibles en el conjunto de datos:
 * Condición física del conductor en el momento del accidente
 
 
-### Problema a estudiar
+### Objetivo del estudio
 
 Con este proyecto, buscamos obtener tendencias de comportamiento humano y entender a mayor profundidad que nuestras acciones nos afectan a nosotros y a terceros.
 
@@ -176,4 +176,8 @@ Ya teniendo los datos normalizados, podemos hacer consultas para sacar resultado
 
 ## Conclusiones
 
-Através de nuestros 
+A través de nuestras consultas y el análisis de datos cumplimos con el objetivo de nuestro proyecto. Queríamos ver tendencias del comportamiento humano. Detectamos que los hombres son más probables a consumir drogas y/o alcohol y a tener accidentes de tráfico que las mujeres. También vimos que las personas con mayor edad son menos probable a tener accidentes por el uso del celular. Adicionalmente, queríamos entender a mayor profundidad que nuestras acciones nos afectan a nosotros y a terceros, es decir cómo manejar bajo la influencia de sustancias, usar el celular o no utilizar el cinturón de seguridad pueden afectar nuestra salud y hasta la salud de otras personas, pues podemos ser nosotros quienes causemos los accidentes. Agregando a esto, vimos la importancia de tener un sistema eficiente de servicios médicos de emergencia para reducir la gravedad de los accidentes de tráfico y por ende mejorar la calidad de vida de los ciudadanos (y las personas que no residen ahí pero visitan seguido esa ciudad).
+
+Algo aún más importante que reflexionamos gracias al análisis esta base de datos es que no puedes quedarte en el análisis de los datos. Debes recordar que atrás de estos datos hay personas. Vidas que se perdieron, familias que fueron afectadas, tragedias que ocurrieron. Tenemos que tener una visión ética y simpática cada vez que trabajemos con una base de datos similar y ver cómo el análisis que le demos puede afectar a muchas personas.
+
+Finalmente, nos dimos cuenta de la importancia del registro de datos. Para mejorar la calidad de los análisis de datos, hay que llevar un mejor registro de los datos pues pueden ocurrir varios errores en la limpieza de datos al intentar corregir errores eficientemente. Errores que pueden llevar a un análisis incorrecto de los mismos datos.
