@@ -134,15 +134,15 @@ _Las únicas FD que se mantienen en una relvar en BCNF son triviales o bien son 
 ### 4NF
 
 Aquí se presentan algunas dependencias multivaluadas. Para hacer que todas las dependencias multivaluados no triviales estén implicadas por llaves y que hiciera sentido, descompusimos la tabla en 5 tablas:
-* id
+* **id**
    * Contiene únicamente la llave principal. Esto se hizo para que en las otras tablas se pudiera poner _person_id_ como llave foránea y se pudieran hacer JOINS con esa llave.
-* person
+* **person**
    * Contiene _person_id_ como llave foránea e _id_ de esta tabla y todos los atributos que hablan de las características del individuo (_person_type, seat_no, city, state, zipcode, sex, age_).
-* injury
+* **injury**
    * Contiene _person_id_ como llave foránea e _id_ de esta tabla y todos los atributos que hacen referencia a las lesiones que tuvo la persona, así como la forma en la que lo trataron (_safety_equipment, airbag_deployed, injury_classification, hospital, ems_agency_).
-* accident
+* **accident**
    * Contiene _person_id_ como llave foránea e _id_ de esta tabla y todos los atributos que tratan con el accidente en sí y las causas de este (_crash_date, driver_action, driver_vision, physical_condition, pedpedal_action, pedpedal_visibility, pedpedal_location, bac_result, bac_result_value, cell_phone_use_).
-* ref
+* **ref**
    * Contiene _person_id_ como llave foránea e _id_ de esta tabla, _crash_record_id_ y _vehicle_id_. Estas dos últimas tablas pueden ser usadas para unirlas con otras bases de datos del portal de Chicago con los mismo nombres.
 
 
@@ -175,4 +175,4 @@ x
 
 ## Conclusiones
 
-x
+Através de nuestros 
