@@ -4,7 +4,6 @@ Un proyecto realizado para la materia de _Bases de Datos_.
 
 ## Contenidos
 
-
 1. [Proyecto](#proyecto)
    i. [Integrantes del equipo](#integrantes-del-equipo)
    ii. [Descripción de los datos](#descripción-de-los-datos)
@@ -14,14 +13,15 @@ Un proyecto realizado para la materia de _Bases de Datos_.
       ii. [Análisis preliminar de los datos](#análisis-preliminar-de-los-datos)
 4. [Limpieza de datos](#limpieza-de-datos)
 5. [Normalización de datos hasta cuarta formal normal](#normalización-de-datos-hasta-cuarta-formal-normal)
-      i. [1NF](#1NF)
-      ii. [2NF](#2NF)
-      iii. [3NF](#3NF)
-      iv. [BCNF](#BCNF)
-      v. [4NF](#4NF)
-6. [Análisis de datos a través de consultas SQL](#análisis-de-datos-a-través-de-consultas-SQL)
+      i. [1NF](#1nf)
+      ii. [2NF](#2nf)
+      iii. [3NF](#3nf)
+      iv. [BCNF](#bcnf)
+      v. [4NF](#4nf)
+6. [Análisis de datos a través de consultas SQL](#análisis-de-datos-a-través-de-consultas-sql)
 7. [Creación de atributos para entrenamiento de modelos](#creación-de-atributos-para-entrenamiento-de-modelos)
 8. [Conclusiones](#conclusiones)
+
 
 ## Proyecto
 
@@ -67,6 +67,8 @@ Para insertar los datos en bruto se debe primero correr el script `raw_data_sche
 FROM 'path_to_downloaded_csv' 
 WITH (FORMAT CSV, HEADER true, DELIMITER ',');
 ```
+
+### Análisis preliminar de los datos
 
 
 ## Limpieza de datos
