@@ -37,5 +37,3 @@ CREATE TABLE raw.crashes_people (
 );
 
 	--person_id, person_type, crash_record_id, vehicle_id, crash_date, seat_no, city, state, zipcode, sex, age, drivers_license_state, drivers_license_class, safety_equipment, airbag_deployed, ejection, injury_classification, hospital, ems_agency, ems_run_no, driver_action, driver_vision, physical_condition, pedpedal_action, pedpedal_visibility, pedpedal_location, bac_result, bac_result_value,cell_phone_use
-
-raw_data_schema_creation.sql
