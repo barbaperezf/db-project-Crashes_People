@@ -150,26 +150,27 @@ Aquí se presentan algunas dependencias multivaluadas. Para hacer que todas las 
 ## Análisis de datos a través de consultas SQL
 
 Ya teniendo los datos normalizados, podemos hacer consultas para sacar resultados interesantes. En este proyecto se hicieron cinco consultas que revelan información importante. Este código se puede encontrar en el script 'data_analysis.sql'.
+
 **1. Top 10 de ciudades de residencia con mayor número de accidentes en Chicago (excluyendo a Chicago, _desconocidos_ y _otros_).**
-      - x
+   - Esto nos dio una lista de las 10 ciudades que tienen la mayor cantidad de gente relacionadas a accidentes dentro de Chicago. Lo curioso, pero no sorprendente, fue cuando los pusimos en el mapa, se podía ver una relación de entre más cerca estuviera de Chicago, más accidentes iba a tener. Esto tiene sentido pues si una ciudad está cerca de Chicago, es más probable que sus residentes se vayan a Chicago para trabajar, creando la oportunidad de tener accidentes dentro de esta ciudad.
    
 **2. Accidentes fatales o de lesión incapacitante usando cinturón de seguridad v.s. no utilizándolo.**
-      - x
+   - Esta consulta está más interesante pues contabiliza el número de accidentes graves de gente que estaba usando su cinturón de seguridad al momento del accidente contra aquellos que no estaban utilizándolo. Los resultados con nuestros datos (puede cambiar si se descargan los datos más actualizados) fue que más del doble de personas que no usa cinturón de seguridad tiene accidentes graves a comparación de aquellos que si lo utilizan. Esta consulta nos concientiza en la importancia del uso de equipo de seguridad (en este caso, cinturón de seguridad) para reducir la gravedad de los accidentes.
       
 **3. Comparación del personas accidentadas bajo la influencia de alcohol y/o drogas dividido por género.**
-      - x
+   - Aquí se compara el uso de sustancias entre hombres y mujeres. Los resultados van bastante acorde con el comportamiento de nuestra sociedad. Hay 2.7 veces más hombres que mujeres que utilizan alcohol y/o drogas y terminan en un accidente de tránsito. Es decir, por cada mujer bajo la influencia de algún estupefacto que acaba en un accidente, hay casi 3 hombres. 
       
 **4. La importancia de las ambulancias: relación entre los accidentes fatales si llegó o no una ambulancia.**
-      - x
+   - Para esta pregunta se realizaron cuatro consultas. Primero: cantidad de accidentes fatales en los cuales sí llegó una ambulancia; segundo: cantidad de accidentes fatales en los cuales no llegó una ambulancia; tercero: cantidad de accidentes donde hubo lesiones no fatales y sí llego la ambulancia; y cuarto: cantidad de accidentes donde hubo lesiones no fatales y no llegó la ambulancia. Los resultados fueron 225, 773, 20,731 y 84,932 respectivamente. Esto nos muestra que cuando llega la ambulancia a la escena del accidente, no solo hay menor cantidad de fatalidades, sino también menor cantidad de accidentes graves. La salud de las personas depende de un sistema de servicios médicos de emergencia de calidad, esto es importante para cualquier ciudad del mundo.
       
 **5. Edad y el uso del celular manejando.**
-      - x
+   - 
 
 
 
 ## Creación de atributos para entrenamiento de modelos
 
-x
+
 
 
 
