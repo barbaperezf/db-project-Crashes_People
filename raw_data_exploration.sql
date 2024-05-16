@@ -1,3 +1,6 @@
+SELECT *
+FROM raw.crashes_people;
+
 SELECT COUNT(*)
 FROM raw.crashes_people; --1,819,430
 
