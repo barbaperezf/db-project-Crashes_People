@@ -70,6 +70,7 @@ WITH (FORMAT CSV, HEADER true, DELIMITER ',');
 
 ### Análisis preliminar de los datos
 
+Para el análisi preeliminar de los datos, corrimos el codigo que está en el script `raw_data_schema_creation.sql`. Aquí nos percatamos de distintas
 
 ## Limpieza de datos
 
