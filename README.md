@@ -4,22 +4,22 @@ Un proyecto realizado para la materia de _Bases de Datos_.
 
 ## Contenidos
 
-1. [Proyecto](#proyecto)
-   i. [Integrantes del equipo](#integrantes-del-equipo)
-   ii. [Descripción de los datos](#descripción-de-los-datos)
-   iii. [Objetivo del estudio](#objetivo-del-estudio)
-3. [Carga inicial y análisis preliminar](#carga-inicial-y-análisis-preliminar)
-      i. [Carga inicia de datos](#carga-inicial-de-datos)
-      ii. [Análisis preliminar de los datos](#análisis-preliminar-de-los-datos)
-4. [Limpieza de datos](#limpieza-de-datos)
-5. [Normalización de datos hasta cuarta formal normal](#normalización-de-datos-hasta-cuarta-formal-normal)
-      i. [1NF](#1nf)
-      ii. [2NF](#2nf)
-      iii. [3NF](#3nf)
-      iv. [BCNF](#bcnf)
-      v. [4NF](#4nf)
-6. [Análisis de datos a través de consultas SQL](#análisis-de-datos-a-través-de-consultas-sql)
-7. [Creación de atributos para entrenamiento de modelos](#creación-de-atributos-para-entrenamiento-de-modelos)
+1. [Proyecto](#proyecto)</br>
+   i. [Autor](#autor)</br>
+   ii. [Descripción de los datos](#descripción-de-los-datos)</br>
+   iii. [Objetivo del estudio](#objetivo-del-estudio)</br>
+3. [Carga inicial y análisis preliminar](#carga-inicial-y-análisis-preliminar)</br>
+      i. [Carga inicia de datos](#carga-inicial-de-datos)</br>
+      ii. [Análisis preliminar de los datos](#análisis-preliminar-de-los-datos)</br>
+4. [Limpieza de datos](#limpieza-de-datos)</br>
+5. [Normalización de datos hasta cuarta formal normal](#normalización-de-datos-hasta-cuarta-formal-normal)</br>
+      i. [1NF](#1nf)</br>
+      ii. [2NF](#2nf)</br>
+      iii. [3NF](#3nf)</br>
+      iv. [BCNF](#bcnf)</br>
+      v. [4NF](#4nf)</br>
+6. [Análisis de datos a través de consultas SQL](#análisis-de-datos-a-través-de-consultas-sql)</br>
+7. [Creación de atributos para entrenamiento de modelos](#creación-de-atributos-para-entrenamiento-de-modelos)</br>
 8. [Conclusiones](#conclusiones)
 
 
@@ -27,10 +27,8 @@ Un proyecto realizado para la materia de _Bases de Datos_.
 ## Proyecto
 
 
-### Integrantes del equipo:
-
-* [Fernando Barba Pérez](https://github.com/barbaperezf)
-* Enrique Gómez Carapia
+### Autor
+[Fernando Barba Pérez](https://github.com/barbaperezf)
 
 
 ### Descripción de los datos
